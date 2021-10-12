@@ -142,6 +142,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         peDate.removeFromGlucoseLevels(at: indexPath.row)
+        //Delete this peDate if theres no more glucose levels
+        if peDate.glucoseLevels?.count == 0 {
+            context.delete(peDate)
+            self.peDate = nil
+            print("Deleted")
+        }
         do{
             try context.save()
             //reloadTableData()
