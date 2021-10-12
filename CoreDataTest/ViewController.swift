@@ -26,26 +26,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        let alert = UIAlertController(title: "", message: "Insert glucose level", preferredStyle: .alert)
-        
-        alert.addTextField { textField in
-            textField.placeholder = "100"
-            textField.keyboardType = .numberPad
-        }
-        
-        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [self] action in
-            guard let text = alert.textFields?.first?.text else{
+        presentAlert(message: "Insert glucose level",inputText: nil, buttonTitle: "Add") { text in
+            guard let text = text else {
                 return
             }
-            
             guard let glucoseLevel = Int(text) else{
                 return
             }
-            
             self.saveGlucoseLevel(glucoseLevel)
+        }
+    }
+    
+    func presentAlert(message: String, inputText: String?, buttonTitle: String, complitionHandler: @escaping (String?) -> Void){
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            if let text = inputText {
+                textField.text = text
+            }
+            textField.keyboardType = .numberPad
+        }
+        
+        //Ok
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: { action in
+            guard let text = alert.textFields?.first?.text else{
+                return
+            }
+            complitionHandler(text)
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        //Cancel
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+            complitionHandler(nil)
+        }))
         
         present(alert, animated: true, completion: nil)
     }
@@ -138,7 +151,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         tableview.beginUpdates()
-        tableview.deleteRows(at: [indexPath], with: .bottom)
+        tableview.deleteRows(at: [indexPath], with: .automatic)
         tableview.endUpdates()
     }
     
@@ -166,12 +179,47 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //Edit action
+        let edit = UIContextualAction(style: .normal, title: "") { [weak self] action, view, completionHandler in
+            
+            guard let glucose = self?.peDate?.glucoseLevels?.array[indexPath.row] as? Glucose else{
+                return
+            }
+            
+            self?.presentAlert(message: "Edit glucose level", inputText: "\(glucose.level)", buttonTitle: "Edit") { text in
+                guard let text = text else{
+                    completionHandler(true)
+                    return
+                }
+                guard let level = Int64(text) else {
+                    return
+                }
+                glucose.level = level
+                do{
+                    try self?.context.save()
+                    completionHandler(true)
+                    self?.reloadTableData()
+                }
+                catch{
+                    print(error)
+                }
+            }
+        }
+        edit.backgroundColor = UIColor.systemCyan
+        let config = UIImage.SymbolConfiguration(pointSize: 22)
+        edit.image = UIImage(systemName: "pencil.circle.fill", withConfiguration: config)
+        return UISwipeActionsConfiguration(actions: [edit])
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         //Delete action
-        let delete = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completionHandler in
+        let delete = UIContextualAction(style: .destructive, title: "") { [weak self] action, view, completionHandler in
             self?.deleteGlucoseLevel(at: indexPath)
             completionHandler(true)
         }
+        let config = UIImage.SymbolConfiguration(pointSize: 22)
+        delete.image = UIImage(systemName: "trash.fill", withConfiguration: config)
         return UISwipeActionsConfiguration(actions: [delete])
     }
 }
