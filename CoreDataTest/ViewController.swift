@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        presentAlert(message: "Insert glucose level",inputText: nil, buttonTitle: "Add") { text in
+        presentAlert(message: "Insert glucose level", buttonTitle: "Add") { text in
             guard let text = text else {
                 return
             }
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func presentAlert(message: String, inputText: String?, buttonTitle: String, complitionHandler: @escaping (String?) -> Void){
+    func presentAlert(message: String, inputText: String? = nil, buttonTitle: String, complitionHandler: @escaping (String?) -> Void){
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         
         alert.addTextField { textField in
