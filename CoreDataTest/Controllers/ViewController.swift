@@ -26,15 +26,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        presentAlert(message: "Insert glucose level", buttonTitle: "Add") { text in
-            guard let text = text else {
-                return
-            }
-            guard let glucoseLevel = Int(text) else{
-                return
-            }
-            self.saveGlucoseLevel(glucoseLevel)
+        let modalVC = storyboard?.instantiateViewController(withIdentifier: "ModalViewController") as! ModalViewController
+        
+        modalVC.complitionHandler = { glucoseLevel, userImage in
+            self.saveGlucose(glucoseLevel: glucoseLevel, userImage: userImage)
         }
+        present(modalVC, animated: true, completion: nil)
     }
     
     func presentAlert(message: String, inputText: String? = nil, buttonTitle: String, complitionHandler: @escaping (String?) -> Void){
@@ -75,10 +72,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         fetchGlucoseLevels()
     }
     
-    func saveGlucoseLevel(_ glucoseLevel: Int){
+    func saveGlucose(glucoseLevel: Int, userImage: UIImage?){
         let glucose = Glucose(context: context)
         glucose.level = Int64(glucoseLevel)
         glucose.timeRegistered = Date()
+        glucose.imageData = userImage?.pngData()
         
         if peDate == nil{
             let components = Calendar.current.dateComponents([.day,.month,.year], from: pickedDate!)
@@ -172,16 +170,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: GlucoseTableViewCell.identifier, for: indexPath) as! GlucoseTableViewCell
         
+        if let glucose = peDate?.glucoseLevels?.array[indexPath.row] as? Glucose {
+            cell.setCell(glucose: glucose)
+        }
+        
+        /*  Old Version using native code
         var content = cell.defaultContentConfiguration()
         if let glucose = peDate?.glucoseLevels?.array[indexPath.row] as? Glucose {
             let dateFormater = DateFormatter()
             dateFormater.timeStyle = .short
             content.text = "\(glucose.level)"
             content.secondaryText = dateFormater.string(from: glucose.timeRegistered!)
+            
+            //content.image = glucose.getUIImage().resizeImageTo(size: CGSize(width: 100, height: 60))
             cell.contentConfiguration = content
         }
+         */
         return cell
     }
     
@@ -230,4 +236,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-
+extension UIImage {
+    
+    func resizeImageTo(size: CGSize) -> UIImage? {
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return resizedImage
+    }
+}

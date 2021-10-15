@@ -7,33 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3733CDB32718E62B00775783 /* PEDate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3733CDAF2718E62B00775783 /* PEDate+CoreDataClass.swift */; };
+		3733CDB42718E62B00775783 /* PEDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3733CDB02718E62B00775783 /* PEDate+CoreDataProperties.swift */; };
+		3733CDB52718E62B00775783 /* Glucose+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3733CDB12718E62B00775783 /* Glucose+CoreDataClass.swift */; };
+		3733CDB62718E62B00775783 /* Glucose+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3733CDB22718E62B00775783 /* Glucose+CoreDataProperties.swift */; };
+		3733CDB82718FE0300775783 /* GlucoseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3733CDB72718FE0300775783 /* GlucoseTableViewCell.swift */; };
+		37DF847C2718A4A70031D895 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DF847B2718A4A70031D895 /* ModalViewController.swift */; };
 		37F5CF172710D09C0079244A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5CF162710D09C0079244A /* AppDelegate.swift */; };
 		37F5CF192710D09C0079244A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5CF182710D09C0079244A /* SceneDelegate.swift */; };
 		37F5CF1B2710D09C0079244A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5CF1A2710D09C0079244A /* ViewController.swift */; };
 		37F5CF1E2710D09C0079244A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F5CF1C2710D09C0079244A /* Main.storyboard */; };
 		37F5CF212710D09C0079244A /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37F5CF1F2710D09C0079244A /* CoreDataTest.xcdatamodeld */; };
-		37F5CF232710D09F0079244A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F5CF222710D09F0079244A /* Assets.xcassets */; };
 		37F5CF262710D09F0079244A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F5CF242710D09F0079244A /* LaunchScreen.storyboard */; };
-		37F5CF702714D2BF0079244A /* PEDate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5CF6C2714D2BF0079244A /* PEDate+CoreDataClass.swift */; };
-		37F5CF712714D2BF0079244A /* PEDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5CF6D2714D2BF0079244A /* PEDate+CoreDataProperties.swift */; };
-		37F5CF722714D2BF0079244A /* Glucose+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5CF6E2714D2BF0079244A /* Glucose+CoreDataClass.swift */; };
-		37F5CF732714D2BF0079244A /* Glucose+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5CF6F2714D2BF0079244A /* Glucose+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3733CDAF2718E62B00775783 /* PEDate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PEDate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3733CDB02718E62B00775783 /* PEDate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PEDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3733CDB12718E62B00775783 /* Glucose+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Glucose+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3733CDB22718E62B00775783 /* Glucose+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Glucose+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3733CDB72718FE0300775783 /* GlucoseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseTableViewCell.swift; sourceTree = "<group>"; };
+		37DF847B2718A4A70031D895 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		37F5CF132710D09C0079244A /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F5CF162710D09C0079244A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F5CF182710D09C0079244A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		37F5CF1A2710D09C0079244A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		37F5CF1D2710D09C0079244A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37F5CF202710D09C0079244A /* CoreDataTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTest.xcdatamodel; sourceTree = "<group>"; };
-		37F5CF222710D09F0079244A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37F5CF252710D09F0079244A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37F5CF272710D09F0079244A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37F5CF6C2714D2BF0079244A /* PEDate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PEDate+CoreDataClass.swift"; sourceTree = "<group>"; };
-		37F5CF6D2714D2BF0079244A /* PEDate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PEDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		37F5CF6E2714D2BF0079244A /* Glucose+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Glucose+CoreDataClass.swift"; sourceTree = "<group>"; };
-		37F5CF6F2714D2BF0079244A /* Glucose+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Glucose+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3733CDB92718FE0E00775783 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				37DF847B2718A4A70031D895 /* ModalViewController.swift */,
+				3733CDB72718FE0300775783 /* GlucoseTableViewCell.swift */,
+				37F5CF1A2710D09C0079244A /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		37F5CF0A2710D09C0079244A = {
 			isa = PBXGroup;
 			children = (
@@ -66,12 +78,11 @@
 		37F5CF152710D09C0079244A /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
+				3733CDB92718FE0E00775783 /* Controllers */,
 				37F5CF452710D6EB0079244A /* Models */,
 				37F5CF162710D09C0079244A /* AppDelegate.swift */,
 				37F5CF182710D09C0079244A /* SceneDelegate.swift */,
-				37F5CF1A2710D09C0079244A /* ViewController.swift */,
 				37F5CF1C2710D09C0079244A /* Main.storyboard */,
-				37F5CF222710D09F0079244A /* Assets.xcassets */,
 				37F5CF242710D09F0079244A /* LaunchScreen.storyboard */,
 				37F5CF272710D09F0079244A /* Info.plist */,
 				37F5CF1F2710D09C0079244A /* CoreDataTest.xcdatamodeld */,
@@ -82,10 +93,10 @@
 		37F5CF452710D6EB0079244A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				37F5CF6C2714D2BF0079244A /* PEDate+CoreDataClass.swift */,
-				37F5CF6D2714D2BF0079244A /* PEDate+CoreDataProperties.swift */,
-				37F5CF6E2714D2BF0079244A /* Glucose+CoreDataClass.swift */,
-				37F5CF6F2714D2BF0079244A /* Glucose+CoreDataProperties.swift */,
+				3733CDAF2718E62B00775783 /* PEDate+CoreDataClass.swift */,
+				3733CDB02718E62B00775783 /* PEDate+CoreDataProperties.swift */,
+				3733CDB12718E62B00775783 /* Glucose+CoreDataClass.swift */,
+				3733CDB22718E62B00775783 /* Glucose+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F5CF262710D09F0079244A /* LaunchScreen.storyboard in Resources */,
-				37F5CF232710D09F0079244A /* Assets.xcassets in Resources */,
 				37F5CF1E2710D09C0079244A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,13 +171,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F5CF702714D2BF0079244A /* PEDate+CoreDataClass.swift in Sources */,
-				37F5CF732714D2BF0079244A /* Glucose+CoreDataProperties.swift in Sources */,
+				3733CDB32718E62B00775783 /* PEDate+CoreDataClass.swift in Sources */,
+				3733CDB62718E62B00775783 /* Glucose+CoreDataProperties.swift in Sources */,
 				37F5CF212710D09C0079244A /* CoreDataTest.xcdatamodeld in Sources */,
 				37F5CF1B2710D09C0079244A /* ViewController.swift in Sources */,
-				37F5CF712714D2BF0079244A /* PEDate+CoreDataProperties.swift in Sources */,
-				37F5CF722714D2BF0079244A /* Glucose+CoreDataClass.swift in Sources */,
+				3733CDB42718E62B00775783 /* PEDate+CoreDataProperties.swift in Sources */,
+				3733CDB52718E62B00775783 /* Glucose+CoreDataClass.swift in Sources */,
+				3733CDB82718FE0300775783 /* GlucoseTableViewCell.swift in Sources */,
 				37F5CF172710D09C0079244A /* AppDelegate.swift in Sources */,
+				37DF847C2718A4A70031D895 /* ModalViewController.swift in Sources */,
 				37F5CF192710D09C0079244A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

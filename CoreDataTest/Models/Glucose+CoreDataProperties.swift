@@ -2,7 +2,7 @@
 //  Glucose+CoreDataProperties.swift
 //  CoreDataTest
 //
-//  Created by Pedro Ésli Vieira do Nascimento on 11/10/21.
+//  Created by Pedro Ésli Vieira do Nascimento on 14/10/21.
 //
 //
 
@@ -16,6 +16,7 @@ extension Glucose {
         return NSFetchRequest<Glucose>(entityName: "Glucose")
     }
 
+    @NSManaged public var imageData: Data?
     @NSManaged public var level: Int64
     @NSManaged public var timeRegistered: Date?
     @NSManaged public var peDate: PEDate?

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Glucose" representedClassName="Glucose" syncable="YES">
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
         <attribute name="level" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timeRegistered" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="peDate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PEDate" inverseName="glucoseLevels" inverseEntity="PEDate"/>
@@ -12,7 +13,7 @@
         <relationship name="glucoseLevels" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Glucose" inverseName="peDate" inverseEntity="Glucose"/>
     </entity>
     <elements>
+        <element name="Glucose" positionX="36" positionY="108" width="128" height="89"/>
         <element name="PEDate" positionX="-18" positionY="27" width="128" height="89"/>
-        <element name="Glucose" positionX="36" positionY="108" width="128" height="74"/>
     </elements>
 </model>
